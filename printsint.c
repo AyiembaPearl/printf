@@ -83,8 +83,7 @@ int print_d(va_list args)
 			exp = exp / 10;
 			i++;
 		}
-	}
 	_putchar(last + '0');
-
+	}
 	return (i);
 }
