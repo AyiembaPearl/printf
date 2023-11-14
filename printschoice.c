@@ -1,4 +1,5 @@
-#include "main.h"
+#include"main.h"
+
 /**
  * _printf - clone the std printf
  * Restore to previous working condition
@@ -49,7 +50,7 @@ int _printf(const char *format, ...)
  */
 int choose(va_list arg, char c)
 {
-	int count = 0;
+	int count = 0, num;
 	char *str, ch;
 
 	switch (c)
@@ -61,6 +62,14 @@ int choose(va_list arg, char c)
 	case 'c':
 		ch = va_arg(arg, int);
 		count += _putchar(ch);
+		break;
+	case 'i':
+		num = va_arg(arg, int);
+		count += print_i(num);
+		break;
+	case 'd':
+		num = va_arg(arg, int);
+		count += print_i(num);
 		break;
 	default:
 		count = -1;
