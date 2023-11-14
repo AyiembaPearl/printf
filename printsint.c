@@ -1,46 +1,29 @@
 #include "main.h"
 /**
  * print_i - prints integer
- * @args: argument to print
+ * @number: argument to print
  * Return: integer
  */
-int print_i(va_list args)
+int print_i(int number)
 {
-	int n = va_arg(args, int);
-	int num, last = n % 10, digit, exp = 1;
-	int  i = 1;
+	int num, count = 0, remainder, quotient;
 
-	n = n / 10;
-	num = n;
-
-	if (last < 0)
+	num = (unsigned) number;
+	if (number < 0)
 	{
-		_putchar('-');
-		num = -num;
-		n = -n;
-		last = -last;
-		i++;
+		number = -number;
+		count += _putchar('-');
 	}
-	if (num > 0)
+	remainder = num % 10;
+	quotient = num / 10;
+	if (remainder > quotient)
 	{
-		while (num / 10 != 0)
-		{
-			exp = exp * 10;
-			num = num / 10;
-		}
-		num = n;
-		while (exp > 0)
-		{
-			digit = num / exp;
-			_putchar(digit + '0');
-			num = num - (digit * exp);
-			exp = exp / 10;
-			i++;
-		}
+		count += _putchar(remainder + 48);
+		return (count);
 	}
-	_putchar(last + '0');
-
-	return (i);
+	if (remainder < quotient)
+		count += print_i(quotient);
+	return (count);
 }
 
 /**
@@ -48,7 +31,7 @@ int print_i(va_list args)
  * @args: argument to print
  * Return: integer
  */
-
+/*
 int print_d(va_list args)
 {
 	int n = va_arg(args, int);
@@ -87,4 +70,4 @@ int print_d(va_list args)
 	_putchar(last + '0');
 
 	return (i);
-}
+	}*/
