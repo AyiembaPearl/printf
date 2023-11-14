@@ -1,6 +1,7 @@
 #include "main.h"
 /**
  * _printf - clone the std printf
+ * Restore to previous working condition
  * @format: initial stribng to use
  * Return: number of chars printed
  */
