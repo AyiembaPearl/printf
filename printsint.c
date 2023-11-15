@@ -11,7 +11,7 @@ int print_i(int arg)
 
 	if (arg < 0)
 	{
-		_putchar('-');
+		putchar('-');
 		count++;
 		arg *= -1;
 		k = arg;
