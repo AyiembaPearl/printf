@@ -19,6 +19,6 @@ int print_i(int arg)
 	k /= 10;
 	if (k)
 		count += numprint(k);
-	count += _putchar(((unsigned int) arg % 10) + 48);
+	count += putchar(((unsigned int) arg % 10) + 48);
 	return (count);
 }
